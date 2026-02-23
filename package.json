@@ -1,0 +1,15 @@
+{
+  "name": "nirnayai-mvp",
+  "version": "0.2.0",
+  "private": true,
+  "description": "NirnayAI MVP - decision simulation engine",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  }
+}
