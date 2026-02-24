@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NirnayAI</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>NirnayAI</div>
+      </div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="pages/history.html">History</a>
+        <a href="pages/profile.html">Profile</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1 class="h1">See outcomes before you decide.</h1>
+      <p class="sub">NirnayAI simulates realistic paths for Indian life decisions — not advice, not chat. Just structured clarity.</p>
+      <div class="badges">
+        <div class="badge">India-first</div>
+        <div class="badge">Card-based insights</div>
+        <div class="badge">Follow-up refinements</div>
+        <div class="badge">No fortune-telling</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="label">Describe your decision</div>
+        <textarea id="dilemma" rows="4" placeholder="e.g. Should I buy a bike on EMI, or wait 6 months?"></textarea>
+
+        <div class="chips">
+          <button class="chip" onclick="fillExample('Should I buy a bike on EMI?')">Bike on EMI</button>
+          <button class="chip" onclick="fillExample('Should I quit my job to freelance?')">Freelance</button>
+          <button class="chip" onclick="fillExample('Should I move to Bangalore for 10 LPA?')">Relocation</button>
+          <button class="chip" onclick="fillExample('Should I take a loan for masters abroad?')">Masters loan</button>
+        </div>
+
+        <div class="actions">
+          <button class="btn" onclick="simulate()">Simulate outcomes</button>
+          <button class="btn secondary" onclick="clearOutput()">Clear</button>
+        </div>
+
+        <div class="footer">MVP uses mock logic right now. Next step is connecting a real AI backend.</div>
+      </div>
+
+      <div class="card">
+        <div class="label">Why this feels like a partner</div>
+        <div class="kpi">
+          <div class="mini">
+            <b>Baseline memory</b>
+            <span>Profile → city, income, EMIs, risk tolerance</span>
+          </div>
+          <div class="mini">
+            <b>Follow-up depth</b>
+            <span>Refine the same decision multiple times</span>
+          </div>
+          <div class="mini">
+            <b>No chat clutter</b>
+            <span>Everything stays as structured cards</span>
+          </div>
+          <div class="mini">
+            <b>India realism</b>
+            <span>EMIs, family dependents, cost of living</span>
+          </div>
+        </div>
+
+        <div class="sectionTitle">Output</div>
+        <div id="output"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
