@@ -1,0 +1,243 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f3f5f8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #e2e8f0, #f8fafc 42%);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.app-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.topbar {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.top-nav a {
+  border: 1px solid #dbe4ef;
+  border-radius: 999px;
+  padding: 0.38rem 0.72rem;
+  font-size: 0.82rem;
+  background: #f8fafc;
+}
+
+.tag {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  color: #475569;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.premium {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f8fafc;
+  border: 0;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+h1, h2, h3 { margin: 0 0 0.6rem; }
+
+label,
+.question-card {
+  display: grid;
+  gap: 0.45rem;
+}
+
+textarea,
+input,
+select,
+button {
+  font: inherit;
+}
+
+textarea,
+input,
+select {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.65rem;
+  background: #fff;
+}
+
+button,
+.button-link {
+  margin-top: 0.85rem;
+  border: 0;
+  border-radius: 10px;
+  background: #0f172a;
+  color: white;
+  padding: 0.68rem 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-link.secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.cta-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.field-row,
+.question-grid,
+.scenario-grid,
+.screen-grid,
+.profile-grid,
+.auth-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mini-card,
+.question-card,
+.auth-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem;
+  background: #fff;
+}
+
+.scenario-card {
+  border-radius: 12px;
+  padding: 0.85rem;
+  border: 1px solid transparent;
+}
+
+.scenario-card ul {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.optimistic { background: #ecfdf5; border-color: #a7f3d0; }
+.likely { background: #eff6ff; border-color: #bfdbfe; }
+.risk { background: #fef2f2; border-color: #fecaca; }
+.blindspots { background: #fff7ed; border-color: #fed7aa; }
+.assumptions { background: #f8fafc; border-color: #cbd5e1; }
+
+.hidden { display: none; }
+.hint { color: #475569; margin: 0.4rem 0 0; }
+
+@media (min-width: 760px) {
+  .app-shell { padding: 1.6rem 1.2rem; }
+  .field-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .scenario-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .screen-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .profile-grid,
+  .auth-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.refinement-panel {
+  margin-top: 1rem;
+  border-style: dashed;
+}
+
+.refinement-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.secondary-action {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.chip-row {
+  margin-top: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  margin-top: 0;
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #dbe4ef;
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.82rem;
+}
+
+.insight-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.insight-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem;
+  background: #ffffff;
+}
+
+.insight-card h4 {
+  margin: 0 0 0.5rem;
+}
+
+.insight-card ul {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.premium-panel {
+  margin-top: 1rem;
+  border-color: #cbd5e1;
+}
+
+#premiumReportOutput ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1rem;
+}
