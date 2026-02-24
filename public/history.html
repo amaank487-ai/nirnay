@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NirnayAI · History</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="tag">NirnayAI</p>
+          <strong>History</strong>
+        </div>
+        <nav class="top-nav">
+          <a href="/">Landing</a>
+          <a href="/auth.html">Login / Signup</a>
+          <a href="/home.html">Home</a>
+          <a href="/profile.html">Profile</a>
+        </nav>
+      </header>
+
+      <section class="panel">
+        <h2>Saved Simulations</h2>
+        <div id="historyList" class="question-grid"></div>
+      </section>
+    </main>
+
+    <script>
+      async function loadHistory() {
+        const res = await fetch('/api/simulations');
+        const data = await res.json();
+        const el = document.getElementById('historyList');
+        const items = data.simulations || [];
+
+        if (!items.length) {
+          el.innerHTML = '<p class="hint">No saved simulations yet.</p>';
+          return;
+        }
+
+        el.innerHTML = items
+          .map((item) => `
+            <article class="question-card">
+              <strong>#${item.id} · ${item.category}</strong>
+              <span>${item.decision}</span>
+              <small>${item.horizon} · ${item.riskTolerance} · ${item.createdAt}</small>
+            </article>
+          `)
+          .join('');
+      }
+
+      loadHistory();
+    </script>
+  </body>
+</html>
